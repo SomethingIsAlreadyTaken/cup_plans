@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Lato:400,700&display=swap');
 @import 'normalize';
+@import 'mixins';
 
 * {
 	box-sizing: border-box;
@@ -18,7 +19,7 @@ body {
 	background-color: #fcdd7e;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 .cup {
@@ -26,40 +27,43 @@ body {
 	align-items: center;
 	flex-direction: column;
 	background-color: #fff;
+	justify-content: center;
 	width: 30%;
 	min-height: 400px;
 	height: 50%;
 	border-radius: 5px;
-	margin: 1%;
-	padding: 20px 0;
-	&--gold {
+	padding: 30px;
+	@include hover {
 		min-height: 550px;
-		height: 55%;
-		padding-top: 55px;
+		height: 65%;
+		 box-shadow:
+    		1px 1px #02995b,
+    		2px 2px #02995b,
+   			3px 3px #02995b,
+    		4px 4px #02995b,
+    		5px 5px #02995b,
+    		6px 6px #02995b,
+    		7px 7px #02995b;
+  		-webkit-transform: translateX(-7px);
+  		transform: translateX(-7px);
 	}
 	&__price {
-		margin-top: 5px;
 		color: #02995b;
 		font-family:'Fjalla One';
 		font-size: 5rem;
 		font-weight: 700;
+		margin: 5px auto;
+	}
+	&__img {
+		margin: 10px auto;
+		// min-height: 150px;
 	}
 	&__title {
 		font-size: 4rem;
 		font-weight: 700;
+		margin: 10px auto;
 	}
-	&__pic {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	&__smoke {
-		padding: 10px; 
-	}
-	// У меня не получилось спозиционировать картинку зернышка на чашку 
 	&__article {
-		margin: 20px;
-		padding: 20px;
 		font-family: 'Lato';
 		font-size: 2rem;
 
